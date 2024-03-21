@@ -1,0 +1,260 @@
+.wrapper-navbar {
+    background-color: black;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 107px;
+    z-index: 3;
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+    transition: 0.3s;
+}
+
+/* .logo {
+    z-index: 4;
+} */
+
+.logo a {
+    display: block;
+}
+
+.logo-img {
+    display: block;
+    font-size: 5rem;
+    color: white;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    z-index: 3;
+    transition: 0.5s;
+}
+
+.menu li {
+    list-style: none;
+}
+
+.menu li a,
+.dropbtn {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 40px 25px 40px 25px;
+    font-size: 18px;
+    transition: 0.3s;
+
+}
+
+
+.menu li a:hover,
+.dropbtn:hover {
+    box-shadow: 0 -5px 0px white inset, 500px 0 0 transparent inset;
+    padding: 35px 25px 45px 25px;
+    background: #0000001f;
+}
+
+.hamburger {
+    position: relative;
+    width: 30px;
+    height: 4px;
+    background: white;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 4;
+    transition: 0.3s;
+}
+
+.hamburger:before,
+.hamburger:after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    right: 0;
+    background: white;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.hamburger:before {
+    top: -10px;
+    width: 20px;
+}
+
+.hamburger:after {
+    top: 10px;
+    width: 25px;
+}
+
+.toggle-menu {
+    position: absolute;
+    width: 30px;
+    height: 100%;
+    z-index: 5;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.hamburger,
+.toggle-menu {
+    display: none;
+}
+
+.navigation input:checked~.hamburger {
+    background: transparent;
+}
+
+.navigation input:checked~.hamburger:before {
+    top: 0;
+    transform: rotate(-45deg);
+    width: 30px;
+}
+
+
+.navigation input:checked~.hamburger:after {
+    top: 0;
+    transform: rotate(45deg);
+    width: 30px;
+}
+
+.navigation input:checked~.menu {
+    left: 0;
+    box-shadow: -20px 0 40px rgba(0, 0, 0, 0.3);
+}
+
+
+
+/*dropdowncss*/
+
+.dropbtn {
+    background-color: transparent;
+    border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    width: max-content;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 1s;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    max-height: 200px;
+}
+
+
+.hidden-collapse {
+    display: none;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset;
+}
+button:hover{
+    background: #0000001f;
+}
+
+.collapse-btn {
+    background: transparent !important;
+    border: none !important;
+}
+
+
+#example-collapse-text{
+    color: white;
+}
+
+@media (max-width:850px) {
+
+    .hamburger,
+    .toggle-menu {
+        display: block;
+    }
+
+    .header {
+        padding: 10px 7px;
+    }
+
+    .menu {
+        justify-content: start;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        top: 106px;
+        left: -344px;
+        background: black;
+        /* background: purple; */
+        width: 300px;
+        height: 100%;
+        /* padding-top: 102px; */
+        padding-top: 10px;
+        overflow-y: auto;
+    }
+
+    .menu li {
+        width: 100%;
+    }
+
+    .menu li a,
+    .menu li a:hover,
+    [type=button]:not(:disabled),
+    [type=reset]:not(:disabled),
+    [type=submit]:not(:disabled),
+    button:not(:disabled) {
+        padding: 18px;
+        font-size: 24px;
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset;
+        margin: 0 0 0 -32px;
+    }
+
+    .dropdown {
+        display: none;
+    }
+
+    .hidden-collapse {
+        display: block;
+
+    }
+    #example-collapse-text a{
+        padding-left: 30px !important;
+    }
+
+}
