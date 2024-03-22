@@ -1,21 +1,26 @@
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Collapse from 'react-bootstrap/Collapse';
-import './Navbar.css'
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-
 
 const CollapseButton = () => {
   const [open, setOpen] = useState(false);
+  const [rotateDegree, setRotateDegree] = useState(0);
+
+  const toggleCollapse = () => {
+    setOpen(!open);
+    setRotateDegree(open ? 0 : 180); 
+  };
+
   return (
     <>
       <Button
-        onClick={() => setOpen(!open)}
+        onClick={toggleCollapse}
         aria-controls="example-collapse-text"
         aria-expanded={open}
         className='collapse-btn'
-      >
-        Dropdown<MdOutlineKeyboardArrowDown />
+       >
+        Dropdown <MdOutlineKeyboardArrowDown  style={{ transition: 'transform 0.3s', transform: `rotate(${rotateDegree}deg)` }} />
       </Button>
       <Collapse in={open}>
         <div id="example-collapse-text">
@@ -28,4 +33,4 @@ const CollapseButton = () => {
   )
 }
 
-export default CollapseButton
+export default CollapseButton;
