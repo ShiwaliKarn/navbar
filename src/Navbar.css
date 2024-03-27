@@ -182,7 +182,9 @@
 .dropdown:hover .dropdown-content {
     max-height: 200px;
 }
-
+.dropdown:hover .rotate1{
+rotate: 180deg;
+}
 
 .hidden-collapse {
     display: none;
