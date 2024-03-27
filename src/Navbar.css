@@ -182,6 +182,9 @@
 .dropdown:hover .dropdown-content {
     max-height: 200px;
 }
+.dropdown .rotate1 {
+  transition: 0.3s; 
+}
 .dropdown:hover .rotate1{
 rotate: 180deg;
 }
