@@ -26,7 +26,7 @@ const Navbar = () => {
                                 <li><a href="">About</a></li>
 
                                 <div class="dropdown">
-                                    <button class="dropbtn">Dropdown<MdOutlineKeyboardArrowDown /></button>
+                                    <button class="dropbtn">Dropdown<MdOutlineKeyboardArrowDown className='rotate1' /></button>
                                     <div class="dropdown-content">
                                         <a href="#">Link 1</a>
                                         <a href="#">Link 2</a>
